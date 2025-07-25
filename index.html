@@ -29,7 +29,7 @@
     fetch('/src/2git.md')
       .then(response => response.text())
       .then(text => {
-        document.getElementById('content').innerHTML = marked(text);
+        document.getElementById('content').innerHTML = marked.parse(text);
       });
   </script>
 </body>
