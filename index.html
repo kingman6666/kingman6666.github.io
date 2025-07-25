@@ -10,6 +10,30 @@
   <style>
     .c-body {
       background-color: antiquewhite;
+      position: relative;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      height: 100%;
+    }
+
+    #left-menu {
+      /* height: ; */
+      width: 200px;
+      border-right: solid 1px black;
+    }
+
+    .menu-item {
+      cursor: pointer;
+    }
+
+    #right-content {
+      width: 100%;
     }
   </style>
 </head>
@@ -18,19 +42,30 @@
   <div style="font-size: 20px; color:brown;">
     Welcome to The Home Page of Kingman6666.
   </div>
-  <div>
-    1.set name=Kingman6666
+  <div class="container">
+    <div id="left-menu">
+      <div class="menu-item" onclick="handleMenu(`/src/1Markdown.md`)">markdown</div>
+      <div class="menu-item" onclick="handleMenu(`/src/2Git.md`)">git</div>
+      <div class="menu-item" onclick="handleMenu(`/src/3MultipleGitAccount.md`)">git multiple account</div>
+    </div>
+    <div id="right-content"></div>
   </div>
-  <div>
-    2.set email
-  </div>
-  <div id="content"></div>
+
   <script>
-    fetch('/src/2Git.md')
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById('content').innerHTML = marked.parse(text);
-      });
+    var activeMenuUrm = ''
+    function showMD(url) {
+      fetch(url)
+        .then(response => response.text())
+        .then(text => {
+          document.getElementById('right-content').innerHTML = marked.parse(text);
+        });
+    }
+    function handleMenu(url) {
+      activeMenuUrm = url
+      showMD(url)
+    }
+    handleMenu("/src/1Markdown.md")
+
   </script>
 </body>
 
