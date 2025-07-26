@@ -32,7 +32,8 @@
 
     #left-menu {
       /* height: ; */
-      width: 200px;
+      width: 160px;
+      min-width: 160px;
       border-right: solid 1px black;
       overflow: auto;
       padding: 12px;
@@ -40,6 +41,18 @@
 
     .menu-item {
       cursor: pointer;
+      background-color: #fcd8b4;
+      margin-bottom: 4px;
+      padding: 4px;
+      border-radius: 4px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: clip;
+    }
+
+    .menu-item:hover {
+      transform: translate(4px, -2px);
+      background-color: #e2e2e2;
     }
 
     #right-content {
