@@ -17,15 +17,25 @@
       flex-direction: column;
     }
 
+    .top-nav {
+      height: 40px;
+      padding: 10px;
+      font-size: 20px;
+      color: brown;
+    }
+
     .container {
       display: flex;
-      height: 100%;
+      height: calc(100% - 40px);
+      overflow: auto;
     }
 
     #left-menu {
       /* height: ; */
       width: 200px;
       border-right: solid 1px black;
+      overflow: auto;
+      padding: 12px;
     }
 
     .menu-item {
@@ -34,19 +44,21 @@
 
     #right-content {
       width: 100%;
+      overflow: auto;
+      padding: 12px;
     }
   </style>
 </head>
 
 <body class="c-body">
-  <div style="font-size: 20px; color:brown;">
+  <div class="top-nav">
     Welcome to The Home Page of Kingman6666.
   </div>
   <div class="container">
     <div id="left-menu">
-      <div class="menu-item" onclick="handleMenu(`/src/1Markdown.md`)">markdown</div>
-      <div class="menu-item" onclick="handleMenu(`/src/2Git.md`)">git</div>
-      <div class="menu-item" onclick="handleMenu(`/src/3MultipleGitAccount.md`)">git multiple account</div>
+      <div class="menu-item" onclick="handleMenu(`/assets/1Markdown.md`)">markdown</div>
+      <div class="menu-item" onclick="handleMenu(`/assets/2Git.md`)">git</div>
+      <div class="menu-item" onclick="handleMenu(`/assets/3MultipleGitAccount.md`)">git multiple account</div>
     </div>
     <div id="right-content"></div>
   </div>
@@ -64,7 +76,7 @@
       activeMenuUrm = url
       showMD(url)
     }
-    handleMenu("/src/1Markdown.md")
+    handleMenu("/assets/1Markdown.md")
 
   </script>
 </body>
