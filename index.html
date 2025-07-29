@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Kingman6666</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     .c-body {
@@ -55,6 +55,10 @@
       background-color: #e2e2e2;
     }
 
+    .active-menu {
+      background-color: #fff6e2;
+    }
+
     #right-content {
       width: 100%;
       overflow: auto;
@@ -65,19 +69,29 @@
 
 <body class="c-body">
   <div class="top-nav">
-    Welcome to The Home Page of Kingman6666.
+    Welcome back, Kingman6666.
   </div>
   <div class="container">
     <div id="left-menu">
-      <div class="menu-item" onclick="handleMenu(`/assets/1Markdown.md`)">markdown</div>
-      <div class="menu-item" onclick="handleMenu(`/assets/2Git.md`)">git</div>
-      <div class="menu-item" onclick="handleMenu(`/assets/3MultipleGitAccount.md`)">git multiple account</div>
+      <div class="menu-item" key="/assets/1Markdown.md" onclick="handleMenu(`/assets/1Markdown.md`)">markdown</div>
+      <div class="menu-item" key="/assets/2Git.md" onclick="handleMenu(`/assets/2Git.md`)">git</div>
+      <div class="menu-item" key="/assets/3MultipleGitAccount.md"
+        onclick="handleMenu(`/assets/3MultipleGitAccount.md`)">git multiple account</div>
     </div>
     <div id="right-content"></div>
   </div>
 
   <script>
-    var activeMenuUrm = ''
+    function setActiveMenu(url) {
+      let menus = document.getElementById('left-menu')
+      for (const menu of menus.children) {
+        if (menu.getAttribute('key') === url) {
+          menu.setAttribute('class', 'menu-item active-menu')
+        } else {
+          menu.setAttribute('class', 'menu-item')
+        }
+      }
+    }
     function showMD(url) {
       fetch(url)
         .then(response => response.text())
@@ -86,7 +100,7 @@
         });
     }
     function handleMenu(url) {
-      activeMenuUrm = url
+      setActiveMenu(url)
       showMD(url)
     }
     handleMenu("/assets/1Markdown.md")
