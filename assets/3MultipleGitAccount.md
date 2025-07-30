@@ -14,7 +14,7 @@
 	登录github > 头像 > setting > SSH and GPG keys > New SSH key
 	```
 
-3. 编辑C:\Users\admin\.ssh\config:
+3. 编辑C:\Users\xxx\\.ssh\config:
 	```
 	# AAA 账户
 	Host AAA
