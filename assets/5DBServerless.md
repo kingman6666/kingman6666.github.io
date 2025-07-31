@@ -1,6 +1,6 @@
 # DB Action of serverless ( vercel:neon )
 
-## serverside act db in API ( called in clientside )
+## server-side db action in API ( called in client-side )
 ```
 import { neon } from "@neondatabase/serverless";
 
@@ -14,7 +14,7 @@ let res = await neonQuery`INSERT INTO table-name (k1, k2) VALUES (v1, v2)`;
 // Delete: DELETE FROM table-name WHERE condition(eg: id=1)
 ```
 
-## serverside refresh clientside page
+## server-side refresh client-side's page
 ```
 import { revalidatePath } from 'next/cache';
 

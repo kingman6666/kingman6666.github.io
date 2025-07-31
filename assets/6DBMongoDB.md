@@ -1,4 +1,4 @@
-# DB action of MongoDB
+# DB action of MongoDB in server app
 
 ```
 // collection = new MongoClient(url) > connect() > db(name) > collection(name)
@@ -9,23 +9,21 @@
 // Delete: 
 ```
 
-### client app :
-```
-fetch(db-server-addr, { method: 'GET/POST/...' })
-```
+### client app : `fetch(db-server-addr, { method: 'GET/POST/...' })`
 
 ## Server app :
 
-```
-// file system :
+### file system:
 
+```
 |----server.js
 |----routes/xxx.js
 |----controllers/xxxCoontroller.js
 ```
-
+### code demo:
 ```
 // server.js
+
 import express form 'express';
 import xxxRoute from './routes/xxx.js';
 
@@ -36,6 +34,7 @@ app.listen(PORT)
 
 ```
 // routes/xxx.js
+
 import { Router } from 'express';
 import { xxxGetHandle, xxxPostHandle } from "../controllers/xxx.js";
 
@@ -47,6 +46,7 @@ router.post('/', xxxPostHandle)
 
 ```
 // controllers/xxxCoontroller.js
+
 import { MongoClient } from 'mongodb'
 
 export const xxxGetHandle = async (request, response) => {

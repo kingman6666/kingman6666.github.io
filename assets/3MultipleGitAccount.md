@@ -18,15 +18,15 @@
 	```
 	# AAA 账户
 	Host AAA
-  		HostName github.com
-  		User git
-  		IdentityFile ~/.ssh/id_ed25519_AAA
+		HostName github.com
+		User git
+		IdentityFile ~/.ssh/id_ed25519_AAA
 
 	# BBB 账户
-	Host BBB 
-			HostName github.com
-  		User git
-  		IdentityFile ~/.ssh/id_ed25519_BBB
+	Host BBB
+		HostName github.com
+		User git
+		IdentityFile ~/.ssh/id_ed25519_BBB
 	```
 	
 4. clone 代码：
@@ -45,10 +45,10 @@
 		email = XXX
 		
 	[includeIf "gitdir:X:/"]  //在 X:/下 ，用 X:/.gitconfig-AAA 的配置
-			path = X:/.gitconfig-AAA
+		path = X:/.gitconfig-AAA
 		
 	[includeIf "gitdir:X:/1454/"]
-			path = X:/1454/.gitconfig-BBB
+		path = X:/1454/.gitconfig-BBB
 
 
 	-----------------------------X:/.gitconfig-AAA :-------------------
