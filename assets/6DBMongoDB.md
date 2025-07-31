@@ -1,12 +1,21 @@
 # DB action of MongoDB in server app
 
 ```
-// collection = new MongoClient(url) > connect() > db(name) > collection(name)
+collection: new MongoClient(url) > connect() > db(name) > collection(name)
 
-// Search: await collection.find({}).toArray();
-// Insert: 
-// Update: 
-// Delete: 
+    // filter: { _id: new ObjectId(id) }
+Search: findOne find                            //  await collection.find({}).toArray();
+Insert: insertOne insertMany                    //  await collection.insertOne(req.body)
+Update: updateOne updateMany replaceOne findOneAndUpdate findOneAndReplace
+                                                //  await collection.findOneAndReplace(filter, 
+                                                //    { $set: req.body }, { new: true, runValidators: true }
+                                                //  )
+Delete: deleteOne deleteMany findOneAndDelete   //  await collection.deleteOne(filter)
+
+// url-param: req.params.
+// req-query: req.query.
+// req-body: req.body.
+
 ```
 
 ### client app : `fetch(db-server-addr, { method: 'GET/POST/...' })`
