@@ -1,4 +1,4 @@
-# DB action of SQL in server app
+# DB action of SQL in Server-App
 
 ```
 // new Client() > connect() > db()

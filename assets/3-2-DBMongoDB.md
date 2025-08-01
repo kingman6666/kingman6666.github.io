@@ -1,11 +1,11 @@
-# DB action of MongoDB in server app
+# DB action of MongoDB in Server-App
 
 ```
 collection: new MongoClient(url) > connect() > db(name) > collection(name)
 
     // filter: { _id: new ObjectId(id) }
 Search: findOne find                            //  await collection.find({}).toArray();
-Insert: insertOne insertMany                    //  await collection.insertOne(req.body)
+Insert: insertOne insertMany                    //  await collection.insertOne(req.boSy)
 Update: updateOne updateMany replaceOne findOneAndUpdate findOneAndReplace
                                                 //  await collection.findOneAndReplace(filter, 
                                                 //    { $set: req.body }, { new: true, runValidators: true }
